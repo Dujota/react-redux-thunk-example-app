@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+import { fetchPosts } from '../actions';
 
 class PostList extends PureComponent {
   render() {
@@ -10,4 +12,5 @@ class PostList extends PureComponent {
   }
 }
 
-export default PostList;
+// First argument is always mapstatetoprops, action creaters
+export default connect(null, { fetchPosts })(PostList);
