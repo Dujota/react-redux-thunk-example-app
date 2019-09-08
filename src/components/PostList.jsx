@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
 
 class PostList extends PureComponent {
+  componentDidMount() {
+    const { fetchPosts } = this.props;
+    fetchPosts();
+  }
+
   render() {
     return (
       <div>
