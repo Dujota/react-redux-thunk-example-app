@@ -9,6 +9,7 @@ class PostList extends PureComponent {
   }
 
   render() {
+    console.log(this.props.posts);
     return (
       <div>
         Post List
@@ -17,5 +18,8 @@ class PostList extends PureComponent {
   }
 }
 
+// every time reducers runs it will return a new piece of state that will show up in our component through this map state to props
+const mapStateToProps = state => ({ posts: state.posts });
+
 // First argument is always mapstatetoprops, action creaters
-export default connect(null, { fetchPosts })(PostList);
+export default connect(mapStateToProps, { fetchPosts })(PostList);

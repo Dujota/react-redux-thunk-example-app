@@ -1,7 +1,13 @@
 import { combineReducers } from 'redux';
 
 
-export default combineReducers({ replace_me: () => 'replace_me_later' });
+// Reducers
+import postsReducer from './postsReducer';
+
+
+// We create our reducers in a different file and import them here into the combine reducers by passing an object tha maps {storeStateName: Reducer-Imported }
+
+export default combineReducers({ posts: postsReducer });
 
 
 /**
